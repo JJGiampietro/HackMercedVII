@@ -1,12 +1,12 @@
 <?php
 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'Database');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'Database');
+define('DB_SERVER', 'localhost'); //database server
+define('DB_USERNAME', 'root'); //database username
+define('DB_PASSWORD', ''); //database password
+define('DB_NAME', 'users'); //databse name
 
 /*Connect to SQL DB*/
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD);
 
 /*Check connection*/
 if($link == false){

@@ -3,7 +3,7 @@
 session_start();
 
 //check if user is logged in or not logged in
-if(!isset($_SESSION["loggedin"] || $_SESSION["loggedin"]) !== true){
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }?>
