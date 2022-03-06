@@ -2,9 +2,12 @@
 CREATE TABLE users(
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(64) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO users (fullname, email, password, status) VALUES
-('John Doe', 'john.doe@example.com', MD5('123456')),
-('Sam Doe', 'sam.doe@example.com', MD5('123456'));
+-- photos
+CREATE TABLE image(
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    filename VARCHAR(100) NOT NULL
+);
