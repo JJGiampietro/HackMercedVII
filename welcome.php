@@ -28,6 +28,33 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <a href="logout.php" class="btn btn-danger ml-3">Sign Out of Your Account</a>
     </p>
 
+    <head>
+    <title>Image Upload</title>
+    <link rel="stylesheet" 
+          type="text/css"
+          href="style.css" />
+    </head>
+    
+    <body>
+        <div id="content">
+    
+            <form method="POST" 
+                action="" 
+                enctype="multipart/form-data">
+                <input type="file" 
+                    name="uploadfile" 
+                    value="" />
+    
+                <div>
+                    <button type="submit"
+                            name="upload">
+                    UPLOAD
+                    </button>
+                </div>
+            </form>
+        </div>
+    </body>
+
     <?php
     error_reporting(0);
     ?>
@@ -57,33 +84,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
     }
     $result = mysqli_query($db, "SELECT * FROM image");
-    while($data = mysqli_fetch_array($result))
-    {
-
-        ?>
-    <img src="<?php echo $data['Filename']; ?>">
-
-    <?php
-    }
     ?>
 
-    <!DOCTYPE html>
-    <html>
-    <head>
-    <title>Image Upload</title>
-    <div id="content">
-
-    <form method="POST" action="" enctype="multipart/form-data">
-        <input type="file" name="uploadfile" value=""/>
-            
-        <div>
-            <button type="submit" name="upload">UPLOAD</button>
-            </div>
-    </form>
-    </div>
-    </body>
-    </html>
-    
 
 </body>
 </html>
